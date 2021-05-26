@@ -1,38 +1,154 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=KoHo&display=swap');
+
+:root {
+  --monumenOrange: #F3672B;
+}
+
+* {
+  font-family: 'KoHo', sans-serif;
+}
+
+#download {
+  display: grid;
+  place-items: center;
+}
+
+#downloadButton {
+  height: 350px;
+  
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* TODO: fade */
+
+.mainParallax {
+  z-index: -1;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  grid-template-areas: 
+  "t1 phone t2"
+  "t3 phone t4"
+  "t5 phone t6"
+  "t7 phone t8"
+  "t9 phone t10";
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.orangeSpan {
+  color: var(--monumenOrange);
+  font-weight: 800;
+}
+
+.scrollContainer {
+  height: 100%;
+  margin-bottom: 50vh;
+  z-index: -2;
+}
+
+.wrapTagline {
+  display: inline-block;
+  opacity: 0;
+}
+
+.animat {
+  display: grid;
+  place-items: center;
+  font-size: 5vh;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+}
+.animat:nth-child(1){
+  grid-area: t1;
+}
+.animat:nth-child(2){
+  grid-area: t2;
+}
+.animat:nth-child(3){
+  grid-area: t3;
+}
+.animat:nth-child(4){
+  grid-area: t4;
+}
+.animat:nth-child(5){
+  grid-area: t5;
+}
+.animat:nth-child(6){
+  grid-area: t6;
+}
+.animat:nth-child(7){
+  grid-area: t7;
+}
+.animat:nth-child(8){
+  grid-area: t8;
+}
+.animat:nth-child(9){
+  grid-area: t9;
+}
+.animat:nth-child(10){
+  grid-area: t10;
+}
+a.navbar-brand#brand {
+  color: var(--monumenOrange);
+  font-weight: 800;
+}
+
+.imgWrapper {
+  margin-top: 150px;
+  padding-top: 150px;
+  display: grid;
+  place-items: center;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  grid-area: phone;
+  z-index: -2;
+}
+
+.spaceForPhone {
+  grid-area: phone;
+}
+
+.imgWrapper img {
+  width: 25%;
+  
+}
+
+.empty {
+  height: 200vh;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes fadeOut {
+  0% {
+    opacity:1;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity:0;
   }
+}
+/* .undefined {
+  animation: fadeOut ease 2s;
+} */
+
+.visible{
+  opacity: 1;
+  /* animation: fadeIn ease 2s; */
 }
